@@ -1,0 +1,117 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+:root {
+  /* === shadcn/ui collection — Light (from tokens/variables-export.json) === */
+  --background: #ffffff;            /* white */
+  --foreground: #0a0a0a;            /* neutral-950 */
+  --card: #ffffff;                  /* white */
+  --card-foreground: #0a0a0a;       /* neutral-950 */
+  --popover: #ffffff;               /* white */
+  --popover-foreground: #0a0a0a;    /* neutral-950 */
+  --primary: #171717;               /* neutral-900 */
+  --primary-foreground: #fafafa;    /* neutral-50 */
+  --secondary: #f5f5f5;             /* neutral-100 */
+  --secondary-foreground: #0a0a0a;  /* neutral-950 */
+  --muted: #f5f5f5;                 /* neutral-100 */
+  --muted-foreground: #737373;      /* neutral-500 */
+  --accent: #f5f5f5;                /* neutral-100 */
+  --accent-foreground: #171717;     /* neutral-900 */
+  --destructive: #dc2626;           /* red-600 */
+  --border: #e5e5e5;                /* neutral-200 */
+  --input: #e5e5e5;                 /* neutral-200 */
+  --ring: #737373;                  /* neutral-500 */
+  --chart-1: #5eb1ef;               /* rdx blue-8 */
+  --chart-2: #0090ff;               /* rdx blue-9 */
+  --chart-3: #0588f0;               /* rdx blue-10 */
+  --chart-4: #0d74ce;               /* rdx blue-11 */
+  --chart-5: #113264;               /* rdx blue-12 */
+  --sidebar: #fafafa;               /* neutral-50 */
+  --sidebar-foreground: #0a0a0a;    /* neutral-950 */
+  --sidebar-primary: #171717;       /* neutral-900 */
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-accent: #f5f5f5;        /* neutral-100 */
+  --sidebar-accent-foreground: #171717;
+  --sidebar-border: #d4d4d4;        /* neutral-300 */
+  --sidebar-ring: #737373;          /* neutral-500 */
+
+  /* === Project-specific tokens === */
+  --overlay: rgb(0 0 0 / 0.3);      /* Figma: background-color (black 30%) */
+  --semantic-background: #6b7280;   /* gray-500 */
+  --semantic-border: #374151;       /* gray-700 */
+  --semantic-foreground: #ffffff;   /* white */
+
+  /* === ⚠️ Pending — not yet in Figma (see DESIGN.md §5) === */
+  --destructive-foreground: #ffffff;
+  --radius: 8px;                    /* = rounded-lg */
+}
+
+/* NOTE: no .dark block — dark mode has not been designed yet (DESIGN.md §1). */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-overlay: var(--overlay);
+  --color-semantic-background: var(--semantic-background);
+  --color-semantic-border: var(--semantic-border);
+  --color-semantic-foreground: var(--semantic-foreground);
+
+  /* Fixed radius steps from the Figma border-radius collection (DESIGN.md §7) */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-4xl: 32px;
+
+  /* GraphikTH = primary (add via next/font/local when font files are available);
+     IBM Plex Sans Thai = loaded fallback (next/font/google, --font-plex-thai) */
+  --font-sans: "GraphikTH", var(--font-plex-thai), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Andale Mono", ui-monospace, monospace;
+  --font-heading: var(--font-sans);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
